@@ -1,22 +1,38 @@
-= NBNL Topology Profile
+= NBNL Topology (TP) Profile
 
+This vocabulary describes the NBNL Topology Profile based on IEC
+61970-452:2021.
 
-
-.Data Product
+.Profile
 [d2,svg,theme=4]
 ----
-grid-rows: 5
-grid-columns: 5
-
-horizontal-gap: 160
-vertical-gap: 80
-
 vars: {
   d2-config: {
+    layout-engine: elk
     pad: 20
   }
 }
 
+classes: {
+  grid: {
+    style: {
+      fill: "#eccfcb"
+      shadow: true
+    }
+  }
+  enterprise: {
+    style: {
+      fill: "#d1e7c2"
+      shadow: true
+    }
+  }
+  market: {
+    style: {
+      fill: "#fffbef"
+      shadow: true
+    }
+  }
+}
 
 legend: "" {
   style: {
@@ -65,41 +81,25 @@ legend: "" {
   }
 }
 
-classes: {
-  empty: {
-    label: ""
-    style: {
-      fill: transparent
-      stroke: transparent
-    }
-  }
-  grid: {
-    style: {
-      fill: "#eccfcb"
-      shadow: true
-    }
-  }
-  enterprise: {
-    style: {
-      fill: "#d1e7c2"
-      shadow: true
-    }
-  }
-  market: {
-    style: {
-      fill: "#fffbef"
-      shadow: true
-    }
-  }
-  dataset: {
-    style: {
-      shadow: true
-    }
-  }
-}
+direction: down
+
+BaseVoltage.class: grid
+ConnectivityNode.class: grid
+ConnectivityNodeContainer.class: grid
+Terminal.class: grid
+TopologicalNode.class: grid
+Voltage.class: grid
+
+TopologicalNode -- ConnectivityNodeContainer
+TopologicalNode -- BaseVoltage
+TopologicalNode -- ConnectivityNode
+TopologicalNode -- Terminal
+ConnectivityNodeContainer -- ConnectivityNode
+ConnectivityNode -- Terminal
+BaseVoltage -- Voltage
 ----
 
-== Additional artifacts
-
-* xref:schema:attachment$schemas/json_schema/im_nbnl_topology.json_schema.json[JSON schema]
-* xref:schema:attachment$examples/im_nbnl_topology.example.json[Example JSON instance data]
+The *Topology Profile* in IEC 61970-452 defines the structure and relationships
+of electrical network elements, specifying how the physical and logical
+connections within a power system are modelled to support analysis, simulation,
+and real-time grid operation.
