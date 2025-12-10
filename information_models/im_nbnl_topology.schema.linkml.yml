@@ -1,0 +1,14 @@
+name: im-nbnl-topology
+title: NBNL Topology Profile
+description: |-
+  Information models for the NBNL Topology Profile.
+id: https://modellen.netbeheernederland.nl/topology/im-nbnl-topology
+license: https://www.apache.org/licenses/LICENSE-2.0.txt
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dct: http://purl.org/dc/terms/
+  gh: https://github.com/
+classes: {}

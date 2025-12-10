@@ -1,0 +1,7 @@
+_commit: v0.7.11
+_src_path: gh:Netbeheer-Nederland/tmpl-dp
+description: Information models for the NBNL Topology Profile.
+name: im-nbnl-topology
+org: Netbeheer-Nederland
+schema_base_uri: https://modellen.netbeheernederland.nl/topology
+title: NBNL Topology Profile
