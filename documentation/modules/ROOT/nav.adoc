@@ -1,1 +1,0 @@
-* xref:im-nbnl-topology::design.adoc[]
