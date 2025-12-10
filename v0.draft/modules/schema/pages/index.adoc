@@ -1,0 +1,81 @@
+= Index
+
+== Classes
+
+[cols="1,2"]
+|===
+| Name | Description
+
+
+| xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
+| +++An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.+++
+
+| xref::class/BaseVoltage.adoc[`BaseVoltage`]
+| +++Defines a system base voltage which is referenced.+++
+
+| xref::class/ConnectivityNode.adoc[`ConnectivityNode`]
+| +++Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance.+++
+
+| xref::class/ConnectivityNodeContainer.adoc[`ConnectivityNodeContainer`]
+| +++A base class for all objects that may contain connectivity nodes or topological nodes.+++
+
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+| +++This is a root class to provide common identification for all classes needing identification and naming attributes.+++
+
+| xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
+| +++A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.+++
+
+| xref::class/Terminal.adoc[`Terminal`]
+| +++An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.+++
+
+| xref::class/TopologicalNode.adoc[`TopologicalNode`]
+| +++For a detailed substation model a topological node is a set of
+connectivity nodes that, in the current network state, are connected
+together through any type of closed switches, including  jumpers.
+Topological nodes change as the current network state changes (i.e.,
+switches, breakers, etc. change state).
+
+For a planning model, switch statuses are not used to form topological
+nodes.  Instead they are manually created or deleted in a model builder
+tool. Topological nodes maintained this way are also called _busses_.+++
+
+|===
+
+== Types
+
+=== CIM data types
+
+[cols="1,2"]
+|===
+| Name | Description
+
+
+| xref::class/Voltage.adoc[`Voltage`]
+| +++Electrical voltage, can be both AC and DC.+++
+
+|===
+
+
+
+== Enumerations
+
+
+[cols="1,2"]
+|===
+| Name | Description
+
+| xref::enumeration/UnitMultiplier.adoc[`UnitMultiplier`]
+| +++The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. 
+
+For example, if a unit symbol is "m2Pers" and the multiplier is "k", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol "Þ" represents the derived unit "m2Pers", then applying the multiplier "k" can be conceptualized simply as "kÞ".
+
+For example, the SI unit for mass is "kg" and not "g".  If the unit symbol is defined as "kg", then the multiplier is applied to "kg" as a whole and does not replace the "k" in front of the "g". In this case, the multiplier of "m" would be used with the unit symbol of "kg" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the "kg" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the "kg" were replaced by a symbol "Þ", then it is easier to conceptualize the multiplier "m" as creating the proper unit "mÞ", and not the forbidden unit "mkg".+++
+
+| xref::enumeration/UnitSymbol.adoc[`UnitSymbol`]
+| +++The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as "F" instead of "CPerV". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as "kgPerm3". With the exception of the "kg", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. 
+Every unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.
+To allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol "/" is replaced by the letters "Per". Exponents are written in plain text after the unit as "m3" instead of being formatted as "m" with a superscript of 3  or introducing a symbol as in "m^3". The degree symbol "°" is replaced with the letters "deg". Any clarification of the meaning for a substitution is included in the description for the unit symbol.
+Non-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. 
+The integer values are used for harmonization with IEC 61850.+++
+
+|===

@@ -1,0 +1,42 @@
+[.truncate]
+* Information model
+** xref::index.adoc[Index]
+** Classes
+*** xref::class/IdentifiedObject.adoc[IdentifiedObject (root)]
+
+*** xref::class/ACDCTerminal.adoc[ACDCTerminal]
+
+
+
+*** xref::class/BaseVoltage.adoc[BaseVoltage]
+
+
+
+*** xref::class/ConnectivityNode.adoc[ConnectivityNode]
+
+
+
+*** xref::class/ConnectivityNodeContainer.adoc[ConnectivityNodeContainer]
+
+
+
+
+*** xref::class/PowerSystemResource.adoc[PowerSystemResource]
+
+
+
+*** xref::class/Terminal.adoc[Terminal]
+
+
+
+*** xref::class/TopologicalNode.adoc[TopologicalNode]
+
+
+
+** CIM data types
+*** xref::class/Voltage.adoc[Voltage]
+
+
+** Enumerations
+*** xref::enumeration/UnitMultiplier.adoc[UnitMultiplier]
+*** xref::enumeration/UnitSymbol.adoc[UnitSymbol]

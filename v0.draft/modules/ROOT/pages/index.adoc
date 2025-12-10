@@ -1,0 +1,105 @@
+= NBNL Topology (TP) Profile
+
+This vocabulary describes the NBNL Topology Profile based on IEC
+61970-452:2021.
+
+.Profile
+[d2,svg,theme=4]
+----
+vars: {
+  d2-config: {
+    layout-engine: elk
+    pad: 20
+  }
+}
+
+classes: {
+  grid: {
+    style: {
+      fill: "#eccfcb"
+      shadow: true
+    }
+  }
+  enterprise: {
+    style: {
+      fill: "#d1e7c2"
+      shadow: true
+    }
+  }
+  market: {
+    style: {
+      fill: "#fffbef"
+      shadow: true
+    }
+  }
+}
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
+
+direction: down
+
+BaseVoltage.class: grid
+ConnectivityNode.class: grid
+ConnectivityNodeContainer.class: grid
+Terminal.class: grid
+TopologicalNode.class: grid
+Voltage.class: grid
+
+TopologicalNode -- ConnectivityNodeContainer
+TopologicalNode -- BaseVoltage
+TopologicalNode -- ConnectivityNode
+TopologicalNode -- Terminal
+ConnectivityNodeContainer -- ConnectivityNode
+ConnectivityNode -- Terminal
+BaseVoltage -- Voltage
+----
+
+The *Topology Profile* in IEC 61970-452 defines the structure and relationships
+of electrical network elements, specifying how the physical and logical
+connections within a power system are modelled to support analysis, simulation,
+and real-time grid operation.
